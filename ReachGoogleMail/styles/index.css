@@ -1,0 +1,407 @@
+:root {
+    --primary-color: #4e73df;
+    --secondary-color: #1cc88a;
+    --dark-color: #5a5c69;
+    --light-color: #f8f9fc;
+    --sidebar-bg: #2c3e50;
+    --sidebar-active: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.app-sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.sidebar-header h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav li {
+    margin: 0.5rem 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.sidebar-nav li.active {
+    background-color: var(--sidebar-active);
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.sidebar-nav a:hover {
+    color: white;
+    background-color: var(--sidebar-active);
+}
+
+.sidebar-nav i {
+    margin-right: 0.75rem;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.language-selector {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+}
+
+.language-selector:focus {
+    outline: none;
+}
+
+.app-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: white;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    z-index: 1;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+}
+
+.header-title i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: var(--primary-color);
+}
+
+.header-title h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn-notification {
+    background: none;
+    border: none;
+    color: var(--dark-color);
+    font-size: 1.25rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.app-content {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.content-section {
+    margin-bottom: 2rem;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card-image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 0.35rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.2);
+}
+
+.card.full-width {
+    grid-column: 1 / -1;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-body h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.card-image {
+    margin-top: 1rem;
+}
+
+.card-image img,
+.card-image-grid img {
+    width: 100%;
+    max-width: 400px; /* or any max width you want */
+    height: auto;
+    object-fit: contain; /* keeps aspect ratio */
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.card-image-grid img {
+    width: 100%;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #e74a3b;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-notification {
+    position: relative;
+    background: none;
+    border: none;
+    color: var(--dark-color);
+    font-size: 1.25rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+/* Add these styles to your existing index.css */
+.card-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.35rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #3a5bc7;
+    border-color: #3a5bc7;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: rgba(78, 115, 223, 0.1);
+}
+
+.quick-actions {
+    background-color: white;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+}
+
+.quick-actions h3 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Schedule Specific Styles */
+.schedule-controls {
+    background-color: white;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+}
+
+.schedule-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.filter-select {
+    padding: 0.5rem 1rem;
+    border-radius: 0.35rem;
+    border: 1px solid #d1d3e2;
+    background-color: white;
+    color: var(--dark-color);
+}
+
+.card-tip {
+    background-color: #f8f9fc;
+    border-left: 3px solid var(--secondary-color);
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.card-tip i {
+    color: var(--secondary-color);
+}
+
+.card-tip span {
+    font-size: 0.9rem;
+    color: var(--dark-color);
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .app-sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar-nav {
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .sidebar-nav ul {
+        display: flex;
+    }
+
+    .sidebar-nav li {
+        margin: 0.5rem;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+}

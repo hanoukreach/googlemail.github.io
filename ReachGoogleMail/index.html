@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Suite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">     
+        <aside class="app-sidebar">
+            <div class="sidebar-header">
+                <img src="./img/logo.png" alt="Productivity Suite Logo">
+                <h2>Productivity Suite</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="index.html">
+                            <i class="fas fa-download"></i>
+                            <span data-translate="sidebar1" class="translation-text"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./pages/email.html">
+                            <i class="fas fa-envelope"></i>
+                            <span data-translate="sidebar2" class="translation-text"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./pages/category.html">
+                            <i class="fas fa-layer-group"></i>
+                            <span data-translate="sidebar3" class="translation-text"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./pages/mail-to-task.html">
+                            <i class="fas fa-list-check"></i>
+                            <span data-translate="sidebar4" class="translation-text"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./pages/schedulesend.html">
+                            <i class="fas fa-clock"></i>
+                            <span data-translate="sidebar5" class="translation-text"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <select id="switchlang" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="km">ខ្មែរ</option>
+                </select>
+            </div>
+        </aside>
+
+        <main class="app-main">
+            <header class="app-header">
+                <div class="header-title">
+                    <i class="fab fa-google"></i>
+                    <h1 data-translate="title" class="translation-text"></h1>
+                </div>
+                <div class="user-actions">
+                    <button class="btn-notification">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=User&background=4e73df&color=fff" alt="User">
+                    </div>
+                </div>
+            </header>
+
+            <div class="app-content" data-aos="fade-up">
+                <section class="content-section">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 data-translate="shortcut1" class="translation-text"></h3>
+                                <div class="card-image">
+                                    <img style="height: 450px;" src="./img/googlemailfirst.jpg" alt="Shortcut 1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 data-translate="shortcut2" class="translation-text"></h3>
+                                <div class="card-image">
+                                    <img src="./img/shortcut2.png" alt="Shortcut 2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <div class="card full-width">
+                        <div class="card-body">
+                            <h3 data-translate="shortcut3" class="translation-text"></h3>
+                            <div class="card-image">
+                                <img src="./img/shortcut3.jpg" alt="Shortcut 3">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="./js/translate.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
